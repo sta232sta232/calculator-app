@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+.calculator {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #2c2c2c;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.display {
+  background: #222;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: right;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.equation {
+  min-height: 20px;
+  font-size: 16px;
+  color: #888;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.current {
+  font-size: 36px;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.scientific-buttons {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #4a4a4a;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #5a5a5a;
+}
+
+button:active {
+  background: #3a3a3a;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+button[onclick*="handleOperator"],
+button[onclick*="handleCalculate"] {
+  background: #ff9500;
+}
+
+button[onclick*="handleOperator"]:hover,
+button[onclick*="handleCalculate"]:hover {
+  background: #ffaa33;
 }
